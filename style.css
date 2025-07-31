@@ -243,6 +243,7 @@ main {
 section {
   padding: 4rem 0;
   position: relative;
+  scroll-margin-top: 80px; /* Ajusta este valor a la altura de tu navbar */
 }
 
 /* Sección de inicio - Hero */
