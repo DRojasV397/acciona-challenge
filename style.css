@@ -578,6 +578,37 @@ footer p {
   }
 }
 
+@media (max-width: 400px) {
+  /* Extra pequeño - smartphones */
+  h1 {
+    font-size: 1.75rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  /* Espaciado reducido */
+  section {
+    padding: 2rem 0;
+  }
+  
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  /* Tarjetas de impacto */
+  #impacto h3 {
+    font-size: 1.5rem;
+  }
+  
+  /* Imagen en sección visión */
+  #vision img {
+    margin-bottom: 2rem;
+  }
+}
+
 /* ============================================
    ANIMACIONES Y EFECTOS ESPECIALES
    ============================================ */
