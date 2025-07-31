@@ -1,0 +1,686 @@
+/* =================================================================
+   MOVILIDAD SOSTENIBLE OAXACA - HOJA DE ESTILOS
+   Diseño profesional con valores sociales y medioambientales
+   ================================================================= */
+
+/* ============================================
+   IMPORTACIÓN DE FUENTES Y RESET BASE
+   ============================================ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Variables CSS para consistencia en el diseño */
+:root {
+  /* Paleta de colores principal */
+  --verde-primario: #22c55e;
+  --verde-secundario: #16a34a;
+  --verde-oscuro: #15803d;
+  --verde-claro: #dcfce7;
+  --verde-acento: #4ade80;
+  
+  /* Colores de apoyo */
+  --azul-institucional: #3b82f6;
+  --azul-oscuro: #1e40af;
+  --gris-texto: #374151;
+  --gris-claro: #f9fafb;
+  --gris-medio: #6b7280;
+  --gris-oscuro: #1f2937;
+  --blanco: #ffffff;
+  --negro-suave: #111827;
+  
+  /* Tipografía */
+  --fuente-principal: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --fuente-titulos: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  
+  /* Espaciado y medidas */
+  --border-radius: 0.75rem;
+  --border-radius-sm: 0.5rem;
+  --sombra-suave: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --sombra-media: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --sombra-grande: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  
+  /* Transiciones */
+  --transicion-rapida: all 0.2s ease-in-out;
+  --transicion-media: all 0.3s ease-in-out;
+  --transicion-lenta: all 0.4s ease-in-out;
+}
+
+/* Reset y estilos base */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--fuente-principal);
+  line-height: 1.6;
+  color: var(--gris-texto);
+  background-color: var(--gris-claro);
+  overflow-x: hidden;
+}
+
+/* ============================================
+   TIPOGRAFÍA Y ELEMENTOS BASE
+   ============================================ */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--fuente-titulos);
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+p {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.lead {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--gris-medio);
+  margin-bottom: 2rem;
+}
+
+/* ============================================
+   NAVEGACIÓN
+   ============================================ */
+
+.navbar {
+  background-color: var(--blanco) !important;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(34, 197, 94, 0.1);
+  transition: var(--transicion-media);
+}
+
+.navbar-brand {
+  font-family: var(--fuente-titulos);
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--verde-primario) !important;
+  transition: var(--transicion-rapida);
+}
+
+.navbar-brand:hover {
+  color: var(--verde-secundario) !important;
+  transform: translateY(-1px);
+}
+
+.nav-link {
+  font-weight: 500;
+  color: var(--gris-texto) !important;
+  padding: 0.5rem 1rem !important;
+  border-radius: var(--border-radius-sm);
+  transition: var(--transicion-rapida);
+  position: relative;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: var(--verde-primario) !important;
+  background-color: var(--verde-claro);
+  transform: translateY(-2px);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: var(--verde-primario);
+  transition: var(--transicion-rapida);
+  transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+  width: 80%;
+}
+
+/* ============================================
+   BOTONES Y ELEMENTOS INTERACTIVOS
+   ============================================ */
+
+.btn {
+  font-weight: 500;
+  border-radius: var(--border-radius);
+  padding: 0.75rem 1.5rem;
+  transition: var(--transicion-media);
+  border: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-success {
+  background: linear-gradient(135deg, var(--verde-primario), var(--verde-secundario));
+  color: var(--blanco);
+  box-shadow: var(--sombra-media);
+  max-width: 80%;
+}
+
+.btn-success:hover {
+  background: linear-gradient(135deg, var(--verde-secundario), var(--verde-oscuro));
+  transform: translateY(-2px);
+  box-shadow: var(--sombra-grande);
+  color: var(--blanco);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--azul-institucional), var(--azul-oscuro));
+  color: var(--blanco);
+  box-shadow: var(--sombra-media);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--azul-oscuro), #1d4ed8);
+  transform: translateY(-2px);
+  box-shadow: var(--sombra-grande);
+  color: var(--blanco);
+}
+
+.btn-outline-success {
+  border: 2px solid var(--verde-primario);
+  color: var(--verde-primario);
+  background-color: transparent;
+}
+
+.btn-outline-success:hover {
+  background-color: var(--verde-primario);
+  color: var(--blanco);
+  transform: translateY(-1px);
+  box-shadow: var(--sombra-media);
+}
+
+/* Efecto de ondas en botones */
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transition: width 0.6s, height 0.6s;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+.btn:active::before {
+  width: 300px;
+  height: 300px;
+}
+
+.btn > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ============================================
+   SECCIONES PRINCIPALES
+   ============================================ */
+
+main {
+  min-height: 100vh;
+}
+
+.pt-5 {
+    padding-top: 0rem !important; 
+}
+
+
+
+section {
+  padding: 4rem 0;
+  position: relative;
+}
+
+/* Sección de inicio - Hero */
+#inicio {
+  background: linear-gradient(135deg, var(--verde-claro) 0%, var(--blanco) 100%);
+  padding: 6rem 0 4rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+#inicio::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="2" fill="%2322c55e" opacity="0.1"/></svg>') repeat;
+  pointer-events: none;
+}
+
+#inicio h1 {
+  color: var(--verde-oscuro);
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+#inicio .lead {
+  color: var(--gris-medio);
+  font-size: 1.3rem;
+  margin-bottom: 2.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Sección de visión */
+#vision {
+  background-color: var(--blanco);
+}
+
+#vision h2 {
+  color: var(--verde-primario);
+}
+
+#vision img {
+  border-radius: var(--border-radius);
+  box-shadow: var(--sombra-media);
+  transition: var(--transicion-media);
+}
+
+#vision img:hover {
+  transform: scale(1.02);
+  box-shadow: var(--sombra-grande);
+}
+
+#vision ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+#vision li {
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 0.75rem;
+  color: var(--gris-texto);
+}
+
+#vision li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--verde-primario);
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* ============================================
+   TARJETAS Y COMPONENTES
+   ============================================ */
+
+.card {
+  border: none;
+  border-radius: var(--border-radius);
+  box-shadow: var(--sombra-suave);
+  transition: var(--transicion-media);
+  background-color: var(--blanco);
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--sombra-grande);
+}
+
+.card-body {
+  padding: 2rem;
+}
+
+/* Iconos en sección de transporte */
+#transporte .col-md-4 img {
+  filter: hue-rotate(90deg) saturate(1.5);
+  transition: var(--transicion-media);
+}
+
+#transporte .col-md-4:hover img {
+  transform: scale(1.1) rotate(5deg);
+  filter: hue-rotate(90deg) saturate(2);
+}
+
+#transporte h5 {
+  color: var(--verde-secundario);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+/* ============================================
+   MAPA Y RUTAS
+   ============================================ */
+
+#rutas {
+  background: linear-gradient(135deg, var(--gris-claro) 0%, var(--blanco) 100%);
+}
+
+#mapaLeaflet {
+  border-radius: var(--border-radius);
+  box-shadow: var(--sombra-media);
+  border: 3px solid var(--verde-claro);
+  overflow: hidden;
+  transition: var(--transicion-media);
+}
+
+#mapaLeaflet:hover {
+  box-shadow: var(--sombra-grande);
+  transform: scale(1.01);
+}
+
+/* Botones de filtro de rutas */
+.btn-outline-success.btn-sm {
+  font-size: 0.875rem;
+  padding: 0.5rem 1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* ============================================
+   SECCIÓN DE IMPACTO
+   ============================================ */
+
+#impacto {
+  background-color: var(--blanco);
+}
+
+#impacto .card {
+  background: linear-gradient(135deg, var(--verde-claro) 0%, var(--blanco) 100%);
+  border-left: 4px solid var(--verde-primario);
+}
+
+#impacto h3 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--verde-secundario);
+  margin-bottom: 0.5rem;
+}
+
+#impacto .text-muted {
+  color: var(--gris-medio) !important;
+  font-weight: 500;
+}
+
+/* ============================================
+   FORMULARIOS
+   ============================================ */
+
+#participacion {
+  background: linear-gradient(135deg, var(--gris-claro) 0%, #e5f3ff 100%);
+}
+
+#participacion h2 {
+  color: var(--azul-institucional);
+}
+
+.form-control,
+.form-select {
+  border: 2px solid #e5e7eb;
+  border-radius: var(--border-radius-sm);
+  padding: 0.75rem;
+  font-size: 1rem;
+  transition: var(--transicion-rapida);
+  background-color: var(--blanco);
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--azul-institucional);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  background-color: var(--blanco);
+}
+
+.form-label {
+  font-weight: 500;
+  color: var(--gris-texto);
+  margin-bottom: 0.5rem;
+}
+
+textarea.form-control {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Alerta de éxito */
+.alert-success {
+  background: linear-gradient(135deg, var(--verde-claro), #f0fdf4);
+  border: 1px solid var(--verde-primario);
+  color: var(--verde-oscuro);
+  border-radius: var(--border-radius);
+  font-weight: 500;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+footer {
+  background: linear-gradient(135deg, var(--gris-oscuro) 0%, var(--negro-suave) 100%);
+  color: var(--gris-claro);
+  border-top: 3px solid var(--verde-primario);
+}
+
+footer p {
+  margin: 0;
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - MÓVILES
+   ============================================ */
+
+@media (max-width: 768px) {
+  /* Tipografía responsive */
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.75rem;
+  }
+  
+  .lead {
+    font-size: 1.1rem;
+  }
+  
+  /* Navbar móvil */
+  .navbar-nav {
+    background-color: var(--blanco);
+    border-radius: var(--border-radius);
+    padding: 1rem;
+    margin-top: 1rem;
+    box-shadow: var(--sombra-media);
+  }
+  
+  .nav-link {
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Secciones móviles */
+  section {
+    padding: 3rem 0;
+  }
+  
+  #inicio {
+    padding: 4rem 0 3rem 0;
+  }
+  
+  /* Botones móviles */
+  .btn {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+  
+  .btn-outline-success.btn-sm {
+    width: auto;
+    margin: 0.25rem;
+  }
+  
+  /* Tarjetas en móvil */
+  .card-body {
+    padding: 1.5rem;
+  }
+  
+  /* Mapa responsive */
+  #mapaLeaflet {
+    height: 300px !important;
+    margin-bottom: 1rem;
+  }
+  
+  /* Formulario móvil */
+  .form-control,
+  .form-select {
+    font-size: 1rem; /* Previene zoom en iOS */
+  }
+}
+
+@media (max-width: 576px) {
+  /* Extra pequeño - smartphones */
+  h1 {
+    font-size: 1.75rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  /* Espaciado reducido */
+  section {
+    padding: 2rem 0;
+  }
+  
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  /* Tarjetas de impacto */
+  #impacto h3 {
+    font-size: 1.9rem;
+  }
+  
+  /* Imagen en sección visión */
+  #vision img {
+    margin-bottom: 2rem;
+  }
+}
+
+/* ============================================
+   ANIMACIONES Y EFECTOS ESPECIALES
+   ============================================ */
+
+/* Animación de aparición gradual */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Aplicar animación a elementos al cargar */
+.container > * {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Efecto de hover en tarjetas de impacto */
+#impacto .card:hover {
+  background: linear-gradient(135deg, var(--verde-acento) 0%, var(--verde-claro) 100%);
+}
+
+#impacto .card:hover h3 {
+  color: var(--verde-oscuro);
+  transform: scale(1.05);
+}
+
+/* Indicador de carga para el mapa */
+#mapaLeaflet::before {
+  content: 'Cargando mapa...';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--gris-medio);
+  font-weight: 500;
+  z-index: 1000;
+}
+
+/* ============================================
+   UTILIDADES Y HELPERS
+   ============================================ */
+
+/* Texto destacado */
+.text-success {
+  color: var(--verde-primario) !important;
+}
+
+.text-primary {
+  color: var(--azul-institucional) !important;
+}
+
+/* Fondos de sección alternos */
+.bg-light {
+  background-color: var(--gris-claro) !important;
+}
+
+/* Separadores visuales */
+.section-divider {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--verde-primario), transparent);
+  margin: 3rem 0;
+  border: none;
+}
+
+/* Elementos con sombra personalizada */
+.shadow-custom {
+  box-shadow: var(--sombra-media);
+}
+
+/* ============================================
+   ACCESIBILIDAD
+   ============================================ */
+
+/* Focus visible mejorado */
+*:focus-visible {
+  outline: 3px solid var(--azul-institucional);
+  outline-offset: 2px;
+  border-radius: var(--border-radius-sm);
+}
+
+/* Mejores contrastes para textos pequeños */
+.text-muted {
+  color: var(--gris-medio) !important;
+}
+
+/* Asegurar legibilidad en dispositivos de alto contraste */
+@media (prefers-contrast: high) {
+  :root {
+    --gris-medio: #374151;
+    --verde-primario: #15803d;
+  }
+}
+
+/* Respetar preferencias de movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
